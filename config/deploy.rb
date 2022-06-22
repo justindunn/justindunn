@@ -3,9 +3,10 @@ lock "~> 3.17.0"
 
 set :application, "justindunn"
 set :repo_url, "git@github.com:justindunn/justindunn.git"
-
+set :rvm_custom_path, '/usr/share/rvm'  # only needed if not detected
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/#{fetch :application}"
+set :passenger_restart_with_touch, true
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
@@ -13,7 +14,7 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 set :keep_releases, 5
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-
+set :branch, "main"
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
 
