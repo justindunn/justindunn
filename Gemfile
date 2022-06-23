@@ -80,3 +80,5 @@ gem 'capistrano'
 gem 'capistrano-rails'
 gem 'capistrano-passenger'
 gem 'capistrano-rvm'
+
+gem 'dotenv-rails'
