@@ -35,3 +35,4 @@ production:
   <<: *default
   username: deploy
   database: justindunn_prod
+  password: 
