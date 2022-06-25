@@ -8,6 +8,7 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 
 server '104.248.109.103', user: 'deploy', roles: %w{app db web}
+config.serve_static_files = true
 
 # role-based syntax
 # ==================
