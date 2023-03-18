@@ -67,3 +67,4 @@ gem "turbo-rails"
 gem "ruby-openai"
 gem "stimulus-rails"
 gem "devise"
+gem 'dotenv-rails', groups: [:development, :test]

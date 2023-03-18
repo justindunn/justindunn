@@ -1,141 +1,218 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-body{
-    background-color: #19123B;
+@import url('https://rsms.me/inter/inter-ui.css');
+::selection {
+  background: #2D2F36;
 }
-.card{
-    border: none;
-    border-top: 5px solid  rgb(176,106,252);
-    background: #212042;
-    color: #57557A;
+::-webkit-selection {
+  background: #2D2F36;
 }
-p{
-    font-weight: 600;
-    font-size: 15px;
+::-moz-selection {
+  background: #2D2F36;
 }
-.fab{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    background: #2A284D;
-    height: 40px;
-    width: 90px;
+body {
+  background: black;
+  font-family: 'Inter UI', sans-serif;
+  margin: 0;
+  padding: 20px;
 }
-.fab:hover{
-    cursor: pointer;
+.page {
+  background: black;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 40px);
+  position: absolute;
+  place-content: center;
+  width: calc(100% - 40px);
 }
-.fa-twitter{
-    color: #56ABEC;
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: medium;
 }
-.fa-facebook{
-    color: #1775F1;
-}
-.fa-google{
-    color: #CB5048;
-}
-.division{
-    float: none;
-    position: relative;
-    margin: 30px auto 20px;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-}
-.division .line{
-    border-top: 1.5px solid #57557A;;
-    position: absolute;
-    top: 13px;
-    width: 85%;
-}
-.line.l{
-    left: 52px;
-}
-.line.r{
-    right: 45px;
-
-}
-.division span{
-    font-weight: 600;
-    font-size: 14px;
-}
-.myform{
-    padding: 0 25px 0 33px;
-}
-.form-control{
-    border: 1px solid #57557A;
-    border-radius: 3px;
-    background: #212042;
+@media (max-width: 767px) {
+  .page {
+    height: auto;
     margin-bottom: 20px;
-    letter-spacing: 1px;
-    
+    padding-bottom: 20px;
+  }
 }
-.form-control:focus{
-    border: 1px solid #57557A;
-    border-radius: 3px;
-    box-shadow: none;
-    background: #212042;
-    color: #fff;
-    letter-spacing: 1px;
+.container {
+  display: flex;
+  height: 320px;
+  margin: 0 auto;
+  width: 640px;
 }
-.bn{
-    text-decoration: underline;
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    height: 630px;
+    width: 320px;
+  }
 }
-.bn:hover{
-    cursor: pointer;
+.left {
+  background: white;
+  height: calc(100% - 40px);
+  top: 20px;
+  position: relative;
+  width: 50%;
 }
-.form-check-input {
-    margin-top: 8px!important;
-    }
-.btn-primary{
-background: linear-gradient(135deg, rgba(176,106,252,1) 39%,rgba(116,17,255,1) 101%);
-border: none;
-border-radius: 50px;
+@media (max-width: 767px) {
+  .left {
+    height: 100%;
+    left: 20px;
+    width: calc(100% - 40px);
+    max-height: 270px;
+  }
 }
-.btn-primary:focus{
-    box-shadow: none;
-    border: none;
+.login {
+  font-size: 50px;
+  font-weight: 900;
+  margin: 50px 40px 40px;
 }
-small{
-    color: #F2CEFF;
+.eula {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 40px;
 }
-.far.fa-user{
-    font-size: 13px;
+.right {
+  background: #474A59;
+  box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
+  color: #F1F1F2;
+  position: relative;
+  width: 50%;
+}
+@media (max-width: 767px) {
+  .right {
+    flex-shrink: 0;
+    height: 100%;
+    width: 100%;
+    max-height: 350px;
+  }
+}
+svg {
+  position: absolute;
+  width: 320px;
+}
+path {
+  fill: none;
+  stroke: url(#linearGradient);;
+  stroke-width: 4;
+  stroke-dasharray: 240 1386;
+}
+#new_user {
+  margin: 40px;
+  position: absolute;
+}
+label {
+  color:  #c2c2c5;
+  display: block;
+  font-size: 14px;
+  height: 16px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+input {
+  background: transparent;
+  border: 0;
+  color: #f2f2f2;
+  font-size: 20px;
+  height: 30px;
+  line-height: 30px;
+  outline: none !important;
+  width: 100%;
+}
+input::-moz-focus-inner { 
+  border: 0; 
+}
+#submit {
+  color: #707075;
+  margin-top: 40px;
+  transition: color 300ms;
+}
+#submit:focus {
+  color: #f2f2f2;
+}
+#submit:active {
+  color: #d0d0d2;
 }
 
-@media(min-width: 767px){
-    .bn{
-        text-align: right;
+.bg:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #000;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+@keyframes sf-fly-by-1 {
+    from {
+        transform: translateZ(-600px);
+        opacity: 0.5;
+    }
+    to {
+        transform: translateZ(0);
+        opacity: 0.5;
     }
 }
-@media(max-width: 767px){
-    .form-check{
-        text-align: center;
+@keyframes sf-fly-by-2 {
+    from {
+        transform: translateZ(-1200px);
+        opacity: 0.5;
     }
-    .bn{
-        text-align: center;
-        align-items: center;
+    to {
+        transform: translateZ(-600px);
+        opacity: 0.5;
     }
 }
-@media(max-width: 450px){
-    .fab{
-        width: 100%;
-        height: 100%;
+@keyframes sf-fly-by-3 {
+    from {
+        transform: translateZ(-1800px);
+        opacity: 0.5;
     }
-    .division .line{
-        width: 50%;
+    to {
+        transform: translateZ(-1200px);
+        opacity: 0.5;
     }
+}
+.star-field {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    perspective: 600px;
+    -webkit-perspective: 600px;
+    z-index: -1;
+}
+.star-field .layer {
+    box-shadow: -411px -476px #cccccc, 777px -407px #d4d4d4, -387px -477px #fcfcfc, -91px -235px #d4d4d4, 491px -460px #f7f7f7, 892px -128px #f7f7f7, 758px -277px #ededed, 596px 378px #cccccc, 647px 423px whitesmoke, 183px 389px #c7c7c7,
+        524px -237px #f0f0f0, 679px -535px #e3e3e3, 158px 399px #ededed, 157px 249px #ededed, 81px -450px #ebebeb, 719px -360px #c2c2c2, -499px 473px #e8e8e8, -158px -349px #d4d4d4, 870px -134px #cfcfcf, 446px 404px #c2c2c2,
+        440px 490px #d4d4d4, 414px 507px #e6e6e6, -12px 246px #fcfcfc, -384px 369px #e3e3e3, 641px -413px #fcfcfc, 822px 516px #dbdbdb, 449px 132px #c2c2c2, 727px 146px #f7f7f7, -315px -488px #e6e6e6, 952px -70px #e3e3e3,
+        -869px -29px #dbdbdb, 502px 80px #dedede, 764px 342px #e0e0e0, -150px -380px #dbdbdb, 654px -426px #e3e3e3, -325px -263px #c2c2c2, 755px -447px #c7c7c7, 729px -177px #c2c2c2, -682px -391px #e6e6e6, 554px -176px #ededed,
+        -85px -428px #d9d9d9, 714px 55px #e8e8e8, 359px -285px #cfcfcf, -362px -508px #dedede, 468px -265px #fcfcfc, 74px -500px #c7c7c7, -514px 383px #dbdbdb, 730px -92px #cfcfcf, -112px 287px #c9c9c9, -853px 79px #d6d6d6,
+        828px 475px #d6d6d6, -681px 13px #fafafa, -176px 209px #f0f0f0, 758px 457px #fafafa, -383px -454px #ededed, 813px 179px #d1d1d1, 608px 98px whitesmoke, -860px -65px #c4c4c4, -572px 272px #f7f7f7, 459px 533px #fcfcfc,
+        624px -481px #e6e6e6, 790px 477px #dedede, 731px -403px #ededed, 70px -534px #cccccc, -23px 510px #cfcfcf, -652px -237px whitesmoke, -690px 367px #d1d1d1, 810px 536px #d1d1d1, 774px 293px #c9c9c9, -362px 97px #c2c2c2,
+        563px 47px #dedede, 313px 475px #e0e0e0, 839px -491px #e3e3e3, -217px 377px #d4d4d4, -581px 239px #c2c2c2, -857px 72px #cccccc, -23px 340px #dedede, -837px 246px white, 170px -502px #cfcfcf, 822px -443px #e0e0e0, 795px 497px #e0e0e0,
+        -814px -337px #cfcfcf, 206px -339px #f2f2f2, -779px 108px #e6e6e6, 808px 2px #d4d4d4, 665px 41px #d4d4d4, -564px 64px #cccccc, -380px 74px #cfcfcf, -369px -60px #f7f7f7, 47px -495px #e3e3e3, -383px 368px #f7f7f7, 419px 288px #d1d1d1,
+        -598px -50px #c2c2c2, -833px 187px #c4c4c4, 378px 325px whitesmoke, -703px 375px #d6d6d6, 392px 520px #d9d9d9, -492px -60px #c4c4c4, 759px 288px #ebebeb, 98px -412px #c4c4c4, -911px -277px #c9c9c9;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 4px;
+    width: 4px;
+    border-radius: 2px;
+}
+.star-field .layer:nth-child(1) {
+    animation: sf-fly-by-1 5s linear infinite;
+}
+.star-field .layer:nth-child(2) {
+    animation: sf-fly-by-2 5s linear infinite;
+}
+.star-field .layer:nth-child(3) {
+    animation: sf-fly-by-3 5s linear infinite;
 }
