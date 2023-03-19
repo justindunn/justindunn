@@ -1,13 +1,14 @@
-<div class="page star-field">
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
+<div class="page">
+
   <div class="container">
     <div class="left">
-      <div class="login">Who are you?</div>
+      <br />
+      <%= render "users/shared/links" %>
+      <div class="login">Hello</div>
       <div class="eula">I am Justin Dunn - Engineer</div>
     </div>
     <div class="right">
+
       <svg viewBox="0 0 320 300">
         <defs>
           <linearGradient
@@ -19,11 +20,11 @@
                           y2="193.49992"
                           gradientUnits="userSpaceOnUse">
             <stop
-                  style="stop-color:#ff00ff;"
+                  style="stop-color:#ff0019;"
                   offset="0"
                   id="stop876" />
             <stop
-                  style="stop-color:#ff0000;"
+                  style="stop-color:#091763;"
                   offset="1"
                   id="stop878" />
           </linearGradient>
@@ -33,11 +34,13 @@
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
    
           <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, autofocus: true %>
+          <%#= f.email_field :email, autofocus: true, autocomplete: "email" %>
 
 
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "current-password" %>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+          <%#= f.password_field :password, autocomplete: "current-password" %>
 
 
         <%# if devise_mapping.rememberable? %>
@@ -47,7 +50,7 @@
         <%= f.submit "Log in", id: 'submit' %>
       <% end %>
 
-      <%= render "users/shared/links" %>
+      
     </div>
   </div>
 </div>
