@@ -62,9 +62,14 @@ group :test do
   gem "webdrivers"
 end
 
+gem 'httparty'
+gem "rack-timeout"
+gem "bootstrap"
 gem "importmap-rails"
 gem "turbo-rails"
 gem "ruby-openai"
 gem "stimulus-rails"
 gem "devise"
 gem 'dotenv-rails', groups: [:development, :test]
+gem "sassc-rails"
+
