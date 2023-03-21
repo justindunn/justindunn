@@ -20,7 +20,7 @@ class Chat < ApplicationRecord
     begin
       ChatgptService.call(message)
     rescue => e
-      e
+      'Unsure, ask again.'
     end
   end
 

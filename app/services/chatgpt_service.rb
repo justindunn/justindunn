@@ -12,7 +12,7 @@ class ChatgptService
 
   attr_reader :api_url, :options, :model, :message
 
-  def initialize(message, model = 'gpt-3.5-turbo')
+  def initialize(message, model = 'gpt-4')
     api_key = ENV.fetch('OPENAI_ACCESS_TOKEN')
     @options = {
       headers: {
