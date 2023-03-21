@@ -20,6 +20,50 @@ var current = null;
     //   });
     // });
 if (document.getElementById('hs')) {
+  var pathEls = document.querySelectorAll('path');
+for (var i = 0; i < pathEls.length; i++) {
+  var pathEl = pathEls[i];
+  var offset = anime.setDashoffset(pathEl);
+  pathEl.setAttribute('stroke-dashoffset', offset);
+  anime({
+    targets: pathEl,
+    strokeDashoffset: [offset, 0],
+    duration: anime.random(10000, 3000),
+    delay: anime.random(0, 0),
+    loop: true,
+    direction: 'alternate',
+    easing: 'easeInOutSine',
+    autoplay: true
+  });
+}
+
+var letterEls = document.querySelectorAll('.letter');
+for (var i = 0; i < letterEls.length; i++) {
+  var letterEl = letterEls[i];
+  var offset = anime.setDashoffset(letterEl);
+  letterEl.setAttribute('stroke-dashoffset', offset);
+   anime({
+    targets: letterEl,
+    duration: anime.random(0, 100),
+    delay: anime.random(0, 300),
+    opacity: [
+      { value: 0, easing: 'easeInOutSine',duration: anime.random(0, 300) },
+    ],
+    loop: true
+  });
+}
+
+ var timeline = anime.timeline({
+  duration: 5000,
+  easing: 'linear',
+  autoplay: true
+});
+
+timeline.add({
+  targets: ['#logo_2', 'feTurbulence' , 'feDisplacementMap'],
+  baseFrequency: [0,.06],
+  numOctaves: 4
+  });
   function randomValues() {
     var timeline = anime.timeline({
       duration: function() {
