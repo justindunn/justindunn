@@ -3,11 +3,11 @@
     <%= form_for(@chat, remote: true) do |f| %>
 
       <div class='form-outline row'>
-        <div class='col-11'>
+        <div class='col-9'>
           <%= f.text_area :message, autofocus: true, class: 'form-control msg_container_send', placeholder: 'talk here...' %>
           <span class="msg_time_send"></span>
         </div>
-        <div class='col-1'>
+        <div class='col-3'>
           <%= f.submit "send", id: 'submit', class: 'btn btn-light h-100 w-100 btn-rounded' %>
         </div>
       </div>
